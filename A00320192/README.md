@@ -103,4 +103,38 @@ bind-key -Tcopy-mode-vi v send -X begin-selection
 *- Peticiones por medio de curl a cada endpoint. Salida formateada con jq*  
 *- Salida de la ejecución de telnet towel.blinkenlights.nl*  
 
-**Aplicación Cronotab**
+**Aplicación Crontab**
+
+Para la configuracion del script de Python, es necesario instalar lo siguiente:
+
+*pyCLI*
+```
+pip install pyCLI
+```
+
+*psutil 4.3.0*
+```
+pip install psutil==4.3.0
+```
+
+*python-slackclient*
+```
+pip install slackclient
+```
+
+Una vez instalados, dentro de la carpeta codigo_punto6 se crea un script de python con el cual, importando psutil, podremos obtener las estadisticas del sistema y por medio de slackclient se enviaran estos datos en forma de mensaje cada cierto tiempo.
+
+Para esto, configuramos crontab de la siguiente forma:
+
+```
+crontab -e
+```
+
+Dentro del archivo añadimos la siguiente linea:
+
+```
+*/1 * * * * /usr/bin/python /home/juan/tmp/so-exam2/A00320192/codigo_punto6/cod_punto6.py
+```
+
+Guardamos el archivo y asi finalmente se encontraria configurada una tarea con el script que se creo anteriormente con repetición cada minuto.
+
