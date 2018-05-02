@@ -3,7 +3,7 @@
   
 **Universidad Icesi**  
 **Curso:** Sistemas Operativos  
-**Estudiante:** Juan Camilo Villada Gamboa 
+**Estudiante:** Juan Camilo Villada Gamboa  
 **Codigo:** A00320192  
 **Correo:** jncvg17@hotmail.com  
   
@@ -64,6 +64,44 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=yellow"
 source ~/.zshrc
 ```
 
+**Instalación TMUX**
+1. Se instala tmux usando el siguiente comando:
 
+```
+sudo apt-get install tmux
+```
+
+2. Una vez instalado tmux, se cambiara su configuración para facilitar el uso de atajos de teclado, en este caso se cambiaran comandos como **ctrl+a = ctrl+b**. De igual forma se activara vi-mode y la selección, usando el siguiente comando:
+
+```
+vi ~/.tmux.conf
+
+```
+
+En el archivo tmux.conf añadimos lo siguiente:
+
+```
+# use C-a, since it's on the home row and easier to hit than C-b
+set-option -g prefix C-a
+unbind-key C-a
+bind-key C-a send-prefix
+set -g base-index 1
+
+# Easy config reload
+bind-key R source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
+
+# vi is good
+setw -g mode-keys vi
+
+# Setup 'v' to begin selection as in Vim
+bind-key -Tcopy-mode-vi v send -X begin-selection
+```
+
+3. Usando tmux se crea una nueva sesion llamada so-exam2 y se divide en 4 cuadrantes para cada nos de los procesos requeridos:   
+*4 cuadrantes tmux*
+*Salida del comando top*
+*Salida de la ejecución del script de python courses.py*
+*Peticiones por medio de curl a cada endpoint. Salida formateada con jq*
+*Salida de la ejecución de telnet towel.blinkenlights.nl*
 
 
