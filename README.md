@@ -75,7 +75,6 @@ sudo apt-get install tmux
 
 ```
 vi ~/.tmux.conf
-
 ```
 
 En el archivo tmux.conf añadimos lo siguiente:
