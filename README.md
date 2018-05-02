@@ -97,10 +97,10 @@ bind-key -Tcopy-mode-vi v send -X begin-selection
 ```
 
 3. Usando tmux se crea una nueva sesion llamada so-exam2 y se divide en 4 cuadrantes para cada nos de los procesos requeridos:   
-*4 cuadrantes tmux*
-*Salida del comando top*
-*Salida de la ejecución del script de python courses.py*
-*Peticiones por medio de curl a cada endpoint. Salida formateada con jq*
-*Salida de la ejecución de telnet towel.blinkenlights.nl*
+*4 cuadrantes tmux*  
+*Salida del comando top*  
+*Salida de la ejecución del script de python courses.py*  
+*Peticiones por medio de curl a cada endpoint. Salida formateada con jq*  
+*Salida de la ejecución de telnet towel.blinkenlights.nl*  
 
 
